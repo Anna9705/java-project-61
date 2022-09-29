@@ -12,7 +12,12 @@ application {
     mainClass = 'hexlet.code.App'
 }
 
+run {
+    standardInput = System.in
+}
+
 compileJava {
+    //noinspection GroovyAccessibility
     options.release = 17
 }
 
