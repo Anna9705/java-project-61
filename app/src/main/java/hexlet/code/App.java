@@ -3,6 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 import static hexlet.code.Cli.welcomePlayer;
+import hexlet.code.games.EvenCheck;
 
 public class App {
     public static void main(String[] args) {
@@ -16,7 +17,7 @@ public class App {
         int choice = in.nextInt();
         switch (choice) {
             case 2:
-                Games.evenCheck();
+                EvenCheck.evenCheck();
                 break;
             case 1:
                 welcomePlayer();
