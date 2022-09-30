@@ -7,6 +7,7 @@ import static hexlet.code.Cli.welcomePlayer;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.EvenCheck;
 import hexlet.code.games.Gcd;
+import hexlet.code.games.Progression;
 
 public class App {
     public static void main(String[] args) {
@@ -18,13 +19,18 @@ public class App {
                 2 - Even
                 3 - Calc
                 4 - GCD
+                5 - Progression
                 0 - Exit
                 Your choice:\s""");
         int choice = in.nextInt();
         final int even = 2;
         final int calc = 3;
         final int gcd = 4;
+        final int progression = 5;
         switch (choice) {
+            case progression:
+                Progression.progression(roundsCount);
+                break;
             case gcd:
                 Gcd.gcdGame(roundsCount);
                 break;
