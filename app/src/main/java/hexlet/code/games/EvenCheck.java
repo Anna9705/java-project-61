@@ -4,13 +4,13 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class EvenCheck {
-    public static void evenCheck() {
+    public static void evenCheck(int roundsCount) {
         String gameRules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        String[][] gameAnswers = new String[3][2];
+        String[][] gameAnswers = new String[roundsCount][2];
         var random = new Random();
         var number = 0;
         final int rangeOfRandom = 1000;
-        for (var i = 0; i <= 2; i++) {
+        for (var i = 0; i < roundsCount; i++) {
             number = random.nextInt(0, rangeOfRandom);
             gameAnswers[i][0] = Integer.toString(number);
             if (number % 2 == 0) {

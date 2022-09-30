@@ -5,16 +5,16 @@ import java.util.Scanner;
 public class Player {
     private String name;
 
-    Player(String name) {
-        this.name = name;
+    Player(String playerName) {
+        this.name = playerName;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String playerName) {
+        this.name = playerName;
     }
 
     static Player player = new Player("name");

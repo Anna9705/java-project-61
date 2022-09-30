@@ -12,15 +12,16 @@ public class Engine {
         boolean check = true;
         Scanner in = new Scanner(System.in);
         String playerAnswer;
-        for (var i = 0; i <= 2; i++) {
-            System.out.println("Question: " + gameAnswers[i][0]);
+        for (String[] gameAnswer : gameAnswers) {
+            System.out.println("Question: " + gameAnswer[0]);
             System.out.print("Your answer is: ");
             playerAnswer = in.next();
-            if (playerAnswer.equals(gameAnswers[i][1])) {
+            if (playerAnswer.equals(gameAnswer[1])) {
                 System.out.println("Correct!");
             } else {
                 check = false;
-                System.out.println("'" + playerAnswer + "' is wrong answer ;(. Correct answer was '" + gameAnswers[i][1] + "'");
+                System.out.println("'" + playerAnswer + "' is wrong answer ;(. "
+                        + "Correct answer was '" + gameAnswer[1] + "'");
                 Player.loseMessage();
                 break;
             }
