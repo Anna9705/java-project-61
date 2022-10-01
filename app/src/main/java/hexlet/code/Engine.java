@@ -7,7 +7,7 @@ import static hexlet.code.Cli.welcomePlayer;
 public class Engine {
     public static void gamesEngine(String[][] gameAnswers, String gameRules) {
         welcomePlayer();
-        Player.greetPlayer();
+        String name = Player.greetPlayer();
         System.out.println(gameRules);
         boolean check = true;
         Scanner in = new Scanner(System.in);
@@ -22,12 +22,12 @@ public class Engine {
                 check = false;
                 System.out.println("'" + playerAnswer + "' is wrong answer ;(. "
                         + "Correct answer was '" + gameAnswer[1] + "'");
-                Player.loseMessage();
+                Player.loseMessage(name);
                 break;
             }
         }
         if (check) {
-            Player.winMessage();
+            Player.winMessage(name);
         }
     }
 }

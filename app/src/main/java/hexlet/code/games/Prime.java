@@ -5,13 +5,13 @@ import java.util.Random;
 
 public class Prime {
     public static boolean primeCheck(int number) {
-        if (number <= 3) {
+        if (number <= 2) {
             return true;
         }
         if (number % 2 == 0) {
             return false;
         }
-        for (var i = 3; i < number; i += 2) {
+        for (var i = 2 + 1; i < number; i += 2) {
             if (number % i == 0) {
                 return false;
             }
