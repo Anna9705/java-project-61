@@ -7,6 +7,7 @@ import static hexlet.code.Cli.welcomePlayer;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.EvenCheck;
 import hexlet.code.games.Gcd;
+import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
 public class App {
@@ -20,6 +21,7 @@ public class App {
                 3 - Calc
                 4 - GCD
                 5 - Progression
+                6 - Prime
                 0 - Exit
                 Your choice:\s""");
         int choice = in.nextInt();
@@ -27,7 +29,11 @@ public class App {
         final int calc = 3;
         final int gcd = 4;
         final int progression = 5;
+        final int prime = 6;
         switch (choice) {
+            case prime:
+                Prime.primeGame(roundsCount);
+                break;
             case progression:
                 Progression.progression(roundsCount);
                 break;
