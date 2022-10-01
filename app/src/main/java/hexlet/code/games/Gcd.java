@@ -13,7 +13,7 @@ public class Gcd {
     }
 
     public static void gcdGame(int roundsCount) {
-        String gameRules = "Find the greatest common divisor of given numbers";
+        String gameRules = "Find the greatest common divisor of given numbers.";
         String[][] gameAnswers = new String[roundsCount][2];
         var random = new Random();
         var num1 = 0;
