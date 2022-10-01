@@ -15,7 +15,7 @@ public class App {
         Scanner in = new Scanner(System.in);
         final int roundsCount = 3;
         System.out.print("""
-                Please enter the game number and press  enter\s
+                Please enter the game number and press enter\s
                 1 - Greet
                 2 - Even
                 3 - Calc

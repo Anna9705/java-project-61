@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class EvenCheck {
     public static void evenCheck(int roundsCount) {
-        String gameRules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        String gameRules = "Answer 'yes' if the number is even otherwise answer 'no'.";
         String[][] gameAnswers = new String[roundsCount][2];
         var random = new Random();
         var number = 0;
