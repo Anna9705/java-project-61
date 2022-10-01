@@ -20,7 +20,7 @@ public class Prime {
     }
 
     public static void primeGame(int roundsCount) {
-        String gameRules = "Answer 'yes' if given number is prime. Otherwise answer 'no'";
+        String gameRules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] gameAnswers = new String[roundsCount][2];
         var random = new Random();
         var number = 0;
