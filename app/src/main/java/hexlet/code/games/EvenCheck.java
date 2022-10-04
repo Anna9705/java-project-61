@@ -1,7 +1,8 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import java.util.Random;
+import hexlet.code.Utils;
+
 import static hexlet.code.Engine.ROUNDS_COUNT;
 
 public class EvenCheck {
@@ -9,10 +10,9 @@ public class EvenCheck {
 
     public static void runGame() {
         String[][] gameAnswers = new String[ROUNDS_COUNT][2];
-        var random = new Random();
         final int rangeOFRandom = 1000;
         for (String[] roundQAndA : gameAnswers) {
-            var number = random.nextInt(0, rangeOFRandom);
+            var number = Utils.generateNumber(rangeOFRandom);
             roundQAndA[0] = Integer.toString(number);
             roundQAndA[1] = (number % 2 == 0) ? "yes" : "no";
         }

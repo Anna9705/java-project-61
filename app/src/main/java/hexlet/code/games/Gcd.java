@@ -1,7 +1,8 @@
 package hexlet.code.games;
 
-import java.util.Random;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
+
 import static hexlet.code.Engine.ROUNDS_COUNT;
 
 public class Gcd {
@@ -17,11 +18,10 @@ public class Gcd {
 
     public static void runGame() {
         String[][] gameAnswers = new String[ROUNDS_COUNT][2];
-        var random = new Random();
         final int rangeOfRandom = 11;
         for (String[] roundQAndA : gameAnswers) {
-            var num1 = random.nextInt(rangeOfRandom) * random.nextInt(rangeOfRandom);
-            var num2 = random.nextInt(rangeOfRandom) * random.nextInt(rangeOfRandom);
+            var num1 = Utils.generateNumber(rangeOfRandom) * Utils.generateNumber(rangeOfRandom);
+            var num2 = Utils.generateNumber(rangeOfRandom) * Utils.generateNumber(rangeOfRandom);
             roundQAndA[0] = num1 + " " + num2;
             roundQAndA[1] = Integer.toString(gcdCalc(num1, num2));
         }
