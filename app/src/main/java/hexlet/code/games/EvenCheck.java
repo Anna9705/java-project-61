@@ -2,23 +2,25 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import java.util.Random;
+import static hexlet.code.Engine.ROUNDS_COUNT;
 
 public class EvenCheck {
-    public static void evenCheck(int roundsCount) {
-        String gameRules = "Answer 'yes' if number even otherwise answer 'no'.";
-        String[][] gameAnswers = new String[roundsCount][2];
+    private static final String GAME_RULES = "Answer 'yes' if number even otherwise answer 'no'.";
+
+    public static void runGame() {
+        String[][] gameAnswers = new String[ROUNDS_COUNT][2];
         var random = new Random();
         var number = 0;
-        final int rangeOfRandom = 1000;
-        for (var i = 0; i < roundsCount; i++) {
-            number = random.nextInt(0, rangeOfRandom);
-            gameAnswers[i][0] = Integer.toString(number);
+        final int rangeOFRandom = 1000;
+        for (String[] roundQAndA : gameAnswers) {
+            number = random.nextInt(0, rangeOFRandom);
+            roundQAndA[0] = Integer.toString(number);
             if (number % 2 == 0) {
-                gameAnswers[i][1] = "yes";
+                roundQAndA[1] = "yes";
             } else {
-                gameAnswers[i][1] = "no";
+                roundQAndA[1] = "no";
             }
         }
-        Engine.gamesEngine(gameAnswers, gameRules);
+        System.out.println(Engine.gamesEngine(gameAnswers, GAME_RULES));
     }
 }

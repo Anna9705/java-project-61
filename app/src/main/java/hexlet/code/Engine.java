@@ -2,15 +2,16 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import static hexlet.code.Cli.welcomePlayer;
-
 public class Engine {
-    public static void gamesEngine(String[][] gameAnswers, String gameRules) {
-        welcomePlayer();
-        String name = Player.greetPlayer();
-        System.out.println(gameRules);
-        boolean check = true;
+    public static final int ROUNDS_COUNT = 3;
+
+    public static String gamesEngine(String[][] gameAnswers, String gameRules) {
         Scanner in = new Scanner(System.in);
+        System.out.println("\nWelcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        String name = in.next();
+        System.out.println("Hello, " + name + "!");
+        System.out.println(gameRules);
         String playerAnswer;
         for (String[] gameAnswer : gameAnswers) {
             System.out.println("Question: " + gameAnswer[0]);
@@ -19,15 +20,11 @@ public class Engine {
             if (playerAnswer.equals(gameAnswer[1])) {
                 System.out.println("Correct!");
             } else {
-                check = false;
-                System.out.println("'" + playerAnswer + "' is wrong answer ;(. "
-                        + "Correct answer was '" + gameAnswer[1] + "'");
-                Player.loseMessage(name);
-                break;
+                return "'" + playerAnswer + "' is wrong answer ;(. "
+                        + "Correct answer was '" + gameAnswer[1] + "'"
+                        + "\nLet's try again, " + name + "!";
             }
         }
-        if (check) {
-            Player.winMessage(name);
-        }
+        return "Congratulations, " + name + "!";
     }
 }

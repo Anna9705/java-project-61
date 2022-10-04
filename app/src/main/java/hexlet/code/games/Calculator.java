@@ -1,37 +1,42 @@
 package hexlet.code.games;
 
-import java.util.Random;
 import hexlet.code.Engine;
 
+import java.util.Random;
+
+import static hexlet.code.Engine.ROUNDS_COUNT;
+
 public class Calculator {
-    public static void calc(int roundsCount) {
-        String gameRules = "What is the result of the expression?";
-        String[][] gameAnswers = new String[roundsCount][2];
+    private static final String GAME_RULES = "What is the result of the expression?";
+    private static final char[] OPERATORS = {'+', '-', '*'};
+
+    private static int calculate(char operator, int num1, int num2) {
+        switch (operator) {
+            case '+':
+                return num1 + num2;
+            case '-':
+                return num1 - num2;
+            case '*':
+                return num1 * num2;
+            default:
+                throw new RuntimeException("Unknown operator: " + operator);
+        }
+    }
+
+    public static void runGame() {
+        String[][] gameAnswers = new String[ROUNDS_COUNT][2];
         var random = new Random();
         var num1 = 0;
         var num2 = 0;
-        var calcMark = 0;
+        var operator = 0;
         final int rangeOfRandom = 100;
-        final int marksAmount = 3;
-        for (var i = 0; i < roundsCount; i++) {
+        for (String[] roundQAndA : gameAnswers) {
             num1 = random.nextInt(rangeOfRandom);
             num2 = random.nextInt(rangeOfRandom);
-            calcMark = random.nextInt(marksAmount + 1);
-            switch (calcMark) {
-                case 1:
-                    gameAnswers[i][0] = num1 + " - " + num2;
-                    gameAnswers[i][1] = Integer.toString(num1 - num2);
-                    break;
-                case 2:
-                    gameAnswers[i][0] = num1 + " * " + num2;
-                    gameAnswers[i][1] = Integer.toString(num1 * num2);
-                    break;
-                default:
-                    gameAnswers[i][0] = num1 + " + " + num2;
-                    gameAnswers[i][1] = Integer.toString(num1 + num2);
-                    break;
-            }
+            operator = random.nextInt(OPERATORS.length);
+            roundQAndA[0] = num1 + " " + OPERATORS[operator] + " " + num2;
+            roundQAndA[1] = Integer.toString(calculate(OPERATORS[operator], num1, num2));
         }
-        Engine.gamesEngine(gameAnswers, gameRules);
+        System.out.println(Engine.gamesEngine(gameAnswers, GAME_RULES));
     }
 }

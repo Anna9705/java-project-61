@@ -2,7 +2,7 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import static hexlet.code.Cli.welcomePlayer;
+import static hexlet.code.Cli.greetPlayer;
 
 import hexlet.code.games.Calculator;
 import hexlet.code.games.EvenCheck;
@@ -13,7 +13,6 @@ import hexlet.code.games.Progression;
 public class App {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        final int roundsCount = 3;
         System.out.print("""
                 Please enter the game number and press enter\s
                 1 - Greet
@@ -24,34 +23,30 @@ public class App {
                 6 - Prime
                 0 - Exit
                 Your choice:\s""");
-        int choice = in.nextInt();
-        final int even = 2;
-        final int calc = 3;
-        final int gcd = 4;
-        final int progression = 5;
-        final int prime = 6;
+        String choice = in.next();
         switch (choice) {
-            case prime:
-                Prime.primeGame(roundsCount);
+            case "6":
+                Prime.runGame();
                 break;
-            case progression:
-                Progression.progression(roundsCount);
+            case "5":
+                Progression.runGame();
                 break;
-            case gcd:
-                Gcd.gcdGame(roundsCount);
+            case "4":
+                Gcd.runGame();
                 break;
-            case calc:
-                Calculator.calc(roundsCount);
+            case "3":
+                Calculator.runGame();
                 break;
-            case even:
-                EvenCheck.evenCheck(roundsCount);
+            case "2":
+                EvenCheck.runGame();
                 break;
-            case 1:
-                welcomePlayer();
-                Player.greetPlayer();
+            case "1":
+                greetPlayer();
+                break;
+            case "0":
                 break;
             default:
-                break;
+                throw new Error("Not an option");
         }
     }
 }
