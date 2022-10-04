@@ -10,6 +10,7 @@ public class Engine {
         System.out.print("May I have your name? ");
         String name = input.next();
         System.out.println("Hello, " + name + "!");
+        input.close();
     }
 
     public static String gamesEngine(String[][] gameAnswers, String gameRules) {
@@ -32,6 +33,7 @@ public class Engine {
                         + "\nLet's try again, " + name + "!";
             }
         }
+        in.close();
         return "Congratulations, " + name + "!";
     }
 }
