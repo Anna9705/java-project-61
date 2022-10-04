@@ -10,17 +10,12 @@ public class EvenCheck {
     public static void runGame() {
         String[][] gameAnswers = new String[ROUNDS_COUNT][2];
         var random = new Random();
-        var number = 0;
         final int rangeOFRandom = 1000;
         for (String[] roundQAndA : gameAnswers) {
-            number = random.nextInt(0, rangeOFRandom);
+            var number = random.nextInt(0, rangeOFRandom);
             roundQAndA[0] = Integer.toString(number);
-            if (number % 2 == 0) {
-                roundQAndA[1] = "yes";
-            } else {
-                roundQAndA[1] = "no";
-            }
+            roundQAndA[1] = (number % 2 == 0) ? "yes" : "no";
         }
-        System.out.println(Engine.gamesEngine(gameAnswers, GAME_RULES));
+        Engine.gamesEngine(gameAnswers, GAME_RULES);
     }
 }

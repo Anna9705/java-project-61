@@ -18,15 +18,13 @@ public class Gcd {
     public static void runGame() {
         String[][] gameAnswers = new String[ROUNDS_COUNT][2];
         var random = new Random();
-        var num1 = 0;
-        var num2 = 0;
         final int rangeOfRandom = 11;
         for (String[] roundQAndA : gameAnswers) {
-            num1 = random.nextInt(rangeOfRandom) * random.nextInt(rangeOfRandom);
-            num2 = random.nextInt(rangeOfRandom) * random.nextInt(rangeOfRandom);
+            var num1 = random.nextInt(rangeOfRandom) * random.nextInt(rangeOfRandom);
+            var num2 = random.nextInt(rangeOfRandom) * random.nextInt(rangeOfRandom);
             roundQAndA[0] = num1 + " " + num2;
             roundQAndA[1] = Integer.toString(gcdCalc(num1, num2));
         }
-        System.out.println(Engine.gamesEngine(gameAnswers, GAME_RULES));
+        Engine.gamesEngine(gameAnswers, GAME_RULES);
     }
 }

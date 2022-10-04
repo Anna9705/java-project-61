@@ -18,22 +18,19 @@ public class Progression {
     public static void runGame() {
         String[][] gameAnswers = new String[ROUNDS_COUNT][2];
         var random = new Random();
-        var first = 0;
-        var progressionStep = 0;
-        var missingIndex = 0;
         final int progressionLength = 10;
         final int rangeOfRandom = 21;
         final int rangeOfProgressionStep = 11;
         String[] progression;
         for (String[] roundQAndA : gameAnswers) {
-            first = random.nextInt(rangeOfRandom);
-            progressionStep = random.nextInt(rangeOfProgressionStep);
+            var first = random.nextInt(rangeOfRandom);
+            var progressionStep = random.nextInt(rangeOfProgressionStep);
             progression = makeProgression(first, progressionStep, progressionLength);
-            missingIndex = random.nextInt(progressionLength);
+            var missingIndex = random.nextInt(progressionLength);
             roundQAndA[1] = progression[missingIndex];
             progression[missingIndex] = "..";
             roundQAndA[0] = String.join(" ", progression);
         }
-        System.out.println(Engine.gamesEngine(gameAnswers, GAME_RULES));
+        Engine.gamesEngine(gameAnswers, GAME_RULES);
     }
 }

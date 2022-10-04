@@ -26,17 +26,14 @@ public class Calculator {
     public static void runGame() {
         String[][] gameAnswers = new String[ROUNDS_COUNT][2];
         var random = new Random();
-        var num1 = 0;
-        var num2 = 0;
-        var operator = 0;
         final int rangeOfRandom = 100;
         for (String[] roundQAndA : gameAnswers) {
-            num1 = random.nextInt(rangeOfRandom);
-            num2 = random.nextInt(rangeOfRandom);
-            operator = random.nextInt(OPERATORS.length);
+            var num1 = random.nextInt(rangeOfRandom);
+            var num2 = random.nextInt(rangeOfRandom);
+            var operator = random.nextInt(OPERATORS.length);
             roundQAndA[0] = num1 + " " + OPERATORS[operator] + " " + num2;
             roundQAndA[1] = Integer.toString(calculate(OPERATORS[operator], num1, num2));
         }
-        System.out.println(Engine.gamesEngine(gameAnswers, GAME_RULES));
+        Engine.gamesEngine(gameAnswers, GAME_RULES);
     }
 }
