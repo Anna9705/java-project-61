@@ -2,7 +2,7 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import static hexlet.code.Cli.greetPlayer;
+import static hexlet.code.Cli.welcomePlayer;
 
 import hexlet.code.games.Calculator;
 import hexlet.code.games.EvenCheck;
@@ -41,7 +41,8 @@ public class App {
                 EvenCheck.runGame();
                 break;
             case "1":
-                greetPlayer();
+                welcomePlayer();
+                Engine.greet();
                 break;
             case "0":
                 break;
