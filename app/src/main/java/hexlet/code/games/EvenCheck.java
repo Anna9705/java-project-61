@@ -5,7 +5,7 @@ import java.util.Random;
 import static hexlet.code.Engine.ROUNDS_COUNT;
 
 public class EvenCheck {
-    private static final String GAME_RULES = "Answer 'yes' if number even otherwise answer 'no'.";
+    private static final String GAME_RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void runGame() {
         String[][] gameAnswers = new String[ROUNDS_COUNT][2];
