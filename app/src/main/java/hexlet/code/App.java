@@ -42,7 +42,6 @@ public class App {
                 break;
             case "1":
                 welcomePlayer();
-                Engine.greet();
                 break;
             case "0":
                 break;
