@@ -24,7 +24,7 @@ public class Progression {
         String[] progression;
         for (String[] roundQAndA : gameAnswers) {
             var first = Utils.generateNumber(rangeOfRandom);
-            var progressionStep =Utils.generateNumber(rangeOfProgressionStep);
+            var progressionStep = Utils.generateNumber(rangeOfProgressionStep);
             progression = makeProgression(first, progressionStep, progressionLength);
             var missingIndex = Utils.generateNumber(progressionLength);
             roundQAndA[1] = progression[missingIndex];
