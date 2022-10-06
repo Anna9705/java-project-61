@@ -9,13 +9,13 @@ public class EvenCheck {
     private static final String GAME_RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void runGame() {
-        String[][] gameAnswers = new String[ROUNDS_COUNT][2];
+        String[][] gameQAndA = new String[ROUNDS_COUNT][2];
         final int rangeOFRandom = 1000;
-        for (String[] roundQAndA : gameAnswers) {
+        for (String[] roundQAndA : gameQAndA) {
             var number = Utils.generateNumber(rangeOFRandom);
             roundQAndA[0] = Integer.toString(number);
             roundQAndA[1] = (number % 2 == 0) ? "yes" : "no";
         }
-        Engine.gamesEngine(gameAnswers, GAME_RULES);
+        Engine.gamesEngine(gameQAndA, GAME_RULES);
     }
 }
