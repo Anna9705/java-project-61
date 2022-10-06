@@ -12,7 +12,6 @@ public class Engine {
         String name = in.next();
         System.out.println("Hello, " + name + "!");
         System.out.println(gameRules);
-        boolean check = true;
         String playerAnswer;
         for (String[] gameAnswer : gameQAndA) {
             System.out.println("Question: " + gameAnswer[0]);
@@ -21,16 +20,13 @@ public class Engine {
             if (playerAnswer.equals(gameAnswer[1])) {
                 System.out.println("Correct!");
             } else {
-                check = false;
                 System.out.println("'" + playerAnswer + "' is wrong answer ;(. "
                         + "Correct answer was '" + gameAnswer[1] + "'"
                         + "\nLet's try again, " + name + "!");
-                break;
+                return;
             }
         }
         in.close();
-        if (check) {
-            System.out.println("Congratulations, " + name + "!");
-        }
+        System.out.println("Congratulations, " + name + "!");
     }
 }
